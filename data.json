@@ -1,0 +1,212 @@
+
+db.profil.insertMany([
+    { nomprofil: "Client"},
+    { nomprofil: "Mécanicien" },
+    { nomprofil: "Manager" }
+])
+
+db.marque.insertMany([
+    { nommarque: "Toyota" },
+    { nommarque: "Ford" },
+    { nommarque: "Mercedes-Benz" },
+    { nommarque: "BMW" },
+    { nommarque: "Honda" },
+    { nommarque: "Yamaha" },
+    { nommarque: "Kawasaki" },
+    { nommarque: "Ducati" },
+    { nommarque: "Scania" },
+    { nommarque: "Volvo Trucks" },
+    { nommarque: "MAN" }
+  ])
+  
+
+  db.categorie.insertMany([
+    { nomcategorie: "Moto" },
+    { nomcategorie: "SUV" },
+    { nomcategorie: "4x4" },
+    { nomcategorie: "Camion léger" },
+    { nomcategorie: "Camion lourd" },
+    { nomcategorie: "Berline" }
+])
+
+db.etat.insertMany([
+    { etat: "en attente" },
+    { etat: "présence" },
+    { etat: "absence" },
+    { etat: "en cours de devis" },
+    { etat: "terminé" },
+    { etat: "en confirmation" },
+    { etat: "devis final" },
+  ]);
+
+db.blocheure.insertMany([
+    { bloc: "7h-8h", ordre: 1 },
+    { bloc: "8h-9h", ordre: 2 },
+    { bloc: "9h-10h", ordre: 3 },
+    { bloc: "10h-11h", ordre: 4 },
+    { bloc: "11h-12h", ordre: 5 },
+    { bloc: "12h-13h", ordre: 6 },
+    { bloc: "13h-14h", ordre: 7 },
+    { bloc: "14h-15h", ordre: 8 },
+    { bloc: "15h-16h", ordre: 9 },
+    { bloc: "16h-17h", ordre: 10 }
+]);
+
+db.piece.insertMany([
+    { nompiece: "Filtre à huile", prix: 10.00 },
+    { nompiece: "Filtre à air", prix: 20.00 },
+    { nompiece: "Plaquettes de frein", prix: 50.00 },
+    { nompiece: "Disques de frein", prix: 80.00 },
+    { nompiece: "Amortisseur", prix: 150.00 },
+    { nompiece: "Courroie de distribution", prix: 200.00 },
+    { nompiece: "Alternateur", prix: 300.00 },
+    { nompiece: "Démarreur", prix: 250.00 },
+    { nompiece: "Bougie de préchauffage", prix: 20.00 },
+    { nompiece: "Pompe à eau", prix: 180.00 },
+    { nompiece: "Radiateur", prix: 220.00 },
+    { nompiece: "Essuie-glaces", prix: 25.00 },
+    { nompiece: "Pneu", prix: 100.00 },
+    { nompiece: "Joint de culasse", prix: 90.00 },
+    { nompiece: "Pompe à carburant", prix: 150.00 }
+  ])
+
+  db.piece.insertMany([
+    // 🔹 Vidange
+    { nompiece: 'Huile moteur', prix: 50 },
+    { nompiece: 'Joint de bouchon de vidange', prix: 5 },
+  
+    // 🔹 Remplacement essuie-glaces
+    { nompiece: 'Liquide lave-glace', prix: 15 },
+    { nompiece: 'Balais d’essuie-glace avant', prix: 30 },
+    { nompiece: 'Balais d’essuie-glace arrière', prix: 25 },
+  
+    // 🔹 Réparation de phares et feux
+    { nompiece: 'Ampoule de phare', prix: 10 },
+    { nompiece: 'Ampoule de feu arrière', prix: 12 },
+    { nompiece: 'Fusibles', prix: 8 },
+    { nompiece: 'Relais de phare', prix: 20 },
+    { nompiece: 'Câblage électrique', prix: 35 },
+  
+    // 🔹 Réparation et remplacement d’embrayage
+    { nompiece: 'Kit d’embrayage', prix: 400 },
+    { nompiece: 'Liquide de transmission', prix: 60 },
+    { nompiece: 'Volant moteur', prix: 300 },
+    { nompiece: 'Fourchette d’embrayage', prix: 45 }
+  ]);
+  
+  db.statut.insertMany([
+    { statut: 'en attente' },
+    { statut: 'refusé' },
+    { statut: 'en cours' },
+    { statut: 'terminé' }
+  ]);
+// -----------------------------------------------------------------------------------------------------------------------
+// CLI - inscription client/inscription
+{
+    "nom": "Jean Dupont",
+    "email": "jean.dupont@mail.com",
+    "motdepasse": "mdp123!",
+    "phone": "0341234567",
+    "dateNaissance": "1990-05-12T00:00:00Z"
+}
+// CLI - login client/login
+{
+    "email": "jean.dupont@mail.com",
+    "motdepasse": "mdp123!"
+}
+
+// CLI - voiture client/ajouterVoiture
+{
+    "nomvoiture": "Peugeot 208",
+    "immatriculation": "1234ABC",
+    "idmarque": "", 
+    "idcategorie": ""
+}
+
+// ADM - service service/ajouterService
+{
+ "nom" : "SERVICE ENTRETIEN ET CHANGEMENT DES CONSOMMABLES"
+}
+{
+    "nom" : "SERVICE ÉLECTRIQUE & ÉLECTRONIQUE"
+}
+
+// ADM - sous service service/ajouterSousService
+{
+    "idService": "",
+    "nomSousService": "Vidange",
+    "description": "Huile moteur, boîte de vitesse..."
+}
+{
+    "idService": "",
+    "nomSousService": "Remplacement des essuie-glaces",
+    "description": "Installation de nouveaux balais d'essuie-glaces"
+}
+{
+    "idService" : "",
+    "nomSousService" : "Réparation des phares et feux",
+    "description" : "Inspection, diagnostic et réparation des phares et feux du véhicule, y compris le remplacement des ..."
+} 
+{
+    "idService" : "",
+    "nomSousService" : "Réglage et remplacement de l’embrayage",
+    "description" : "Contrôle et ajustement du système d’embrayage pour assurer un ..."
+}
+
+// ADM - ajout tarif pour tel sous service service/ajouterTarif
+{
+    "idService" : "",
+    "idSousService" : "",
+    "categorieID" : "",
+    "prix" : 
+}
+
+// CLI - ajout rdv rdv/ajouterRdv
+{
+    "idbloc": "",
+    "daterdv": "2025-04-01",
+    "voitureIds": [
+      ""
+    ]
+}
+
+// ADM - ajout devis sous service rdv/admin/ajoutDevisRdvVoiture 
+{
+    "rdvId": "",   
+    "idService": "", 
+    "idCategorie": "", 
+    "idVoiture": "",
+    "devis": [
+        {
+            "idsousservice": ""
+        },
+        {
+            "idsousservice": ""
+        }
+    ]
+}
+
+// ADM - ajout devis pièce pout tel sous service  rdv/admin/ajoutDevisRdvPiece
+{
+    "rdvId": "",   
+    "idService": "", 
+    "idSousService": "", 
+    "idVoiture": "",
+    "devis": [
+        {
+            "idpiece": "",
+            "quantite" : 
+        },
+        {
+            "idpiece": "",
+            "quantite" : 
+        }
+    ]
+}
+
+// CLI - accepté un sous service pour tel voiture 
+{
+    "rdvId": "",
+    "idVoiture" : "",
+    "idSousService" : ""
+}
